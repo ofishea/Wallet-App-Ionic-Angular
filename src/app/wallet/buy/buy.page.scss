@@ -1,0 +1,387 @@
+ion-toolbar
+{
+    --background: #06038D;
+    ion-icon
+    {
+        --color: #ffffff;
+    }
+
+    ion-title
+    {
+        --color: #ffffff;
+        font-family: 'CSMedium';
+        font-size: 15px;
+    }
+}
+
+    .profile_content {
+      background: #06038D;
+      border-radius: 0px 0px 100% 100%;
+      .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        ion-buttons {
+          margin: 0px;
+          --border-radius: 50%;
+          ion-button {
+            margin: 0px;
+            height: 40px;
+            width: 40px;
+            background: #ffff;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 5vw 0;
+        ion-thumbnail {
+          height: 100px;
+          width: 100px;
+          --border-radius: 50%;
+          padding: 5px;
+          ion-icon {
+            color: #ffffff;
+            width: 100px;
+            height: 100px
+          }
+        }
+
+            h5
+            {
+                color: #9496BA;
+                font-family: 'CSMedium';
+                font-size: 15px;
+                margin: 5px 0;
+            }
+
+            h1
+            {
+                color: #FFFF;
+                font-family: 'CSMedium';
+                font-size: 30px;
+                margin: 5px 0;
+            }
+        .text {
+          width: 100%;
+          margin: 20px 0px;
+          ion-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            ion-col {
+              h6 {
+                font-size: 20px;
+                margin: 2px;
+              }
+              ion-label {
+                font-size: 13px;
+                color: gray;
+              }
+            }
+          }
+        }
+      }
+
+      .profilee {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 5vw 0;
+        ion-thumbnail {
+          height: 100px;
+          width: 100px;
+          --border-radius: 50%;
+          padding: 5px;
+          ion-icon {
+            color: #ffffff;
+            width: 100px;
+            height: 100px
+          }
+        }
+
+            h5
+            {
+                color: #9496BA;
+                font-family: 'CSMedium';
+                font-size: 15px;
+                margin: 5px 0;
+            }
+
+            h1
+            {
+                color: #FFFF;
+                font-family: 'CSMedium';
+                font-size: 3vw;
+                margin: 5px 0;
+            }
+        .text {
+          width: 100%;
+          margin: 20px 0px;
+          ion-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            ion-col {
+              h6 {
+                font-size: 20px;
+                margin: 2px;
+              }
+              ion-label {
+                font-size: 13px;
+                color: gray;
+              }
+            }
+          }
+        }
+      }
+    }
+
+ion-content
+{
+    --background: #EAB355;
+
+
+    .section
+    {
+      background: #ffff;
+      border-radius: 20px;
+        .title
+        {
+          margin: 5px 0px;
+          background: var(--ion-color-primary);
+          border-radius: 20px 20px 0px 0px;
+            h3
+            {
+              margin: 10px 20px;
+              padding: 7px 0;
+              color: #ffff;
+              font-family: 'CSBook';
+              font-size: 18px;
+
+            }
+        }
+        .items {
+          padding: 20px 0px;
+          ion-item {
+            --padding-start: 10px;
+            margin: 10px 15px;
+            ion-buttons {
+              ion-icon {
+                color: #ffffff;
+                width: 15px;
+                height: 15px;
+              }
+            }
+          }
+        }
+
+        ion-list
+        {
+            background: transparent;
+            ion-item
+            {
+                --background: transparent;
+                img
+                {
+                    height: 35px;
+                }
+
+
+                ion-label
+                {
+                    color: var(--ion-color-light);
+                    font-family: 'CSMedium';
+                }
+            }
+        }
+    }
+    ion-grid {
+      ion-row {
+        .limit {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            width: 100%;
+            margin: 7px 0;
+        }
+        ion-col {
+          h6 {
+          color: #f32879;
+          margin: 20px 0px -12px 0px;
+          font-size: 12px;
+          }
+          ion-label {
+            font-size: 15px;
+            padding: 10px 0px 7px 10px;
+          }
+          ion-input {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.651);
+            border-radius: 10px;
+            --padding-start: 15px;
+          }
+          ion-textarea {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.651);
+            border-radius: 10px;
+            padding: 10px 10px 10px 15px;
+          }
+          ion-select {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.651);
+            border-radius: 10px;
+            padding: 10px 10px 10px 15px;
+          }
+        }
+      }
+    }
+
+.contain {
+  margin: 0 0 8vw 0;
+}
+        .top-holder
+        {
+            h5
+            {
+                color: #9496BA;
+                font-family: 'CSMedium';
+                font-size: 15px;
+                margin: 5px 0;
+            }
+
+            h1
+            {
+                color: #FFFF;
+                font-family: 'CSMedium';
+                font-size: 30px;
+                margin: 5px 0;
+            }
+
+            .top-btns-holder
+            {
+                ion-item
+                {
+                    --background: #ffffff;
+                    --border-radius: 15px;
+                    margin: 0 0 5px 0;
+                    .thumb
+                    {
+                        background: #0066FF;
+                        border-radius: 11px;
+                        height: 34px;
+                        width: 34px;
+                        margin: 5px 0 5px 0 ;
+                    }
+
+                    ion-label
+                    {
+                        color: var(--ion-color-light);
+                        font-family: 'CSMedium';
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+    .btn-holder
+    {
+        margin-top: 20px;
+        ion-button
+        {
+            --border-radius: 15px;
+            font-family: "CSMedium";
+            font-size: 18px;
+            height: 3rem;
+            width: 60%;
+        }
+    }
+
+    .input-holder
+    {
+        ion-input
+        {
+            color: white;
+            font-family: 'CSMedium';
+            font-size: 10px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.651);
+            border-radius: 10px;
+        }
+
+        p
+        {
+            color: white;
+            font-family: 'CSMedium';
+            margin: 0;
+        }
+    }
+        ion-input
+        {
+            color: white;
+            font-family: 'CSMedium';
+            font-size: 10px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.651);
+            border-radius: 10px;
+        }
+
+    .range-holder
+    {
+        h5
+        {
+            color: #9496BA;
+            font-family: 'CSMedium';
+            font-size: 15px;
+            margin: 0 auto;
+        }
+    }
+
+    .details
+    {
+        margin-top: 20px;
+        .img-holder
+        {
+            background: #FF7324;
+            border-radius: 50%;
+            height: 30px;
+            margin-right: 10px;
+            width: 30px;
+
+
+            img
+            {
+                height: 15px;
+            }
+        }
+
+        h4
+        {
+            color: white;
+            font-family: 'CSMedium';
+            font-size: 15px;
+            margin: 0;
+        }
+    }
+
+    .bottom-holder
+    {
+        left: 0;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+}

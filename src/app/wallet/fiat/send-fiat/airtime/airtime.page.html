@@ -1,0 +1,86 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Buy Airtime</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile">
+        <ion-thumbnail>
+          <ion-icon name="rocket-sharp"></ion-icon>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+
+    <div class="item">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Phone Number</ion-label>
+          <ion-input type="hidden" formControlName="fromUsername"></ion-input>
+            <ion-input type="text" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"></ion-input>
+            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+              <div *ngIf="f.phone.errors.required">Phone number is required</div>
+            </div>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Select Network</ion-label>
+            <ion-select formControlName="operatorId" interface="popover" [value]="selectnetwork" (ionChange)="selectNetwork($event)" [ngClass]="{ 'is-invalid': submitted && f.operatorId.errors }">
+                <div *ngFor="let data of networks">
+                <ion-select-option [value]="data.value">{{data.name}}</ion-select-option>
+                </div>
+            </ion-select>
+            <div *ngIf="submitted && f.operatorId.errors" class="invalid-feedback">
+              <div *ngIf="f.operatorId.errors.required">Network operator is required</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Amount</ion-label>
+            <ion-input type="text" formControlName="amount" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"></ion-input>
+            <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+              <div *ngIf="f.amount.errors.required">Amount is required</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button expand="block" type="submit" [disabled]="loading" class="btn-block">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Recharge Now
+      </ion-button>
+      </form>
+  </div>
+
+            </div>
+              </ion-row>
+              </ion-grid>
+</ion-content>

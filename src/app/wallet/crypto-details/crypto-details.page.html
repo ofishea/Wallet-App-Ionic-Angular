@@ -1,0 +1,146 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Bitcoin</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile d-md-none">
+        <h5>0.0032 BTC</h5>
+        <h1>NGN 73,471.75</h1>
+      </div>
+      <div class="profilee d-none d-md-block">
+        <h5>0.0032 BTC</h5>
+        <h1>NGN 73,471.75</h1>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+
+
+
+  <div class="top-holder ion-text-center">
+
+
+      <div class="convv">
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onSend()">
+        <ion-icon name="send-outline"></ion-icon>
+        <ion-label>Send</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onConvert()">
+        <ion-icon name="repeat-sharp"></ion-icon>
+        <ion-label>Swap</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="receive">
+        <ion-icon name="cash-sharp"></ion-icon>
+        <ion-label>Receive</ion-label>
+      </ion-button>
+      </ion-buttons>
+      </div>
+
+      <div class="conv d-md-none">
+      <ion-buttons slot="start">
+      <ion-button (click)="onSend()">
+        <ion-icon name="send-outline"></ion-icon>
+        <ion-label>Send</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+      <ion-button (click)="onConvert()">
+        <ion-icon name="repeat-sharp"></ion-icon>
+        <ion-label>Swap</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+      <ion-button (click)="onReceive()">
+        <ion-icon name="barcode-outline"></ion-icon>
+        <ion-label>Receive</ion-label>
+      </ion-button>
+      </ion-buttons>
+      </div>
+  </div>
+
+  <div class="portfolio">
+  <ion-label><h2>Recent Transactions</h2></ion-label>
+
+  <ion-item lines="none" (click)="presentModal()" *ngFor="let data of histories">
+    <ng-container *ngIf="data.slug == sent">
+    <div slot="start">
+      <ion-icon name="send-outline"></ion-icon>
+    </div>
+    <ion-label>
+      <h5>{{data.name}} </h5>
+      <h5>BTC -{{data.amount}}</h5>
+    </ion-label>
+
+    <div class="end-slot2 ion-text-right" slot="end">
+      <h5>{{data.date}}</h5>
+      <h5>{{data.amountngn}}</h5>
+    </div>
+    </ng-container>
+
+    <ng-container *ngIf="data.slug == received">
+    <div slot="start">
+      <ion-icon name="barcode-outline"></ion-icon>
+    </div>
+    <ion-label>
+      <h5>{{data.name}} </h5>
+      <h5>BTC -{{data.amount}}</h5>
+    </ion-label>
+
+    <div class="end-slot2 ion-text-right" slot="end">
+      <h5>{{data.date}}</h5>
+      <h5>{{data.amountngn}}</h5>
+    </div>
+    </ng-container>
+
+    <ng-container *ngIf="data.slug == swapped">
+    <div slot="start">
+      <ion-icon name="repeat-sharp"></ion-icon>
+    </div>
+    <ion-label>
+      <h5>{{data.name}} </h5>
+      <h5>BTC -{{data.amount}}</h5>
+    </ion-label>
+
+    <div class="end-slot2 ion-text-right" slot="end">
+      <h5>{{data.date}}</h5>
+      <h5>{{data.amountngn}}</h5>
+    </div>
+    </ng-container>
+  </ion-item>
+
+
+  </div>
+
+          </div>
+            </ion-row>
+            </ion-grid>
+</ion-content>

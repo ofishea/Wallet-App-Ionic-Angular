@@ -1,0 +1,43 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
+    <ion-title mode="md" class="ion-text-center">Transaction History</ion-title>
+  <ion-buttons slot="end">
+    <ion-button fill="clear" (click)="dismiss()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding-horizontal">
+
+  <div class="section">
+
+
+      <ion-row  *ngFor="let data of histories">
+        <ion-col size="12" *ngIf="data.slug != sent">
+                <div class="text" style="padding: 2px;">
+                  <small>Sent To<br/><b>{{data.to}}</b></small>
+                </div>
+                <div class="text" style="padding: 2px;">
+                  <small>Sent From<br/><b>{{data.from}}</b></small>
+                </div>
+                <div class="text" style="padding: 2px;">
+                  <small>Amount<br/><b>BTC -{{data.amount}} ({{data.amountngn}})</b></small>
+                </div>
+                <div class="text" style="padding: 2px;">
+                  <small>Timestamp<br/><b>{{data.date}}, {{data.time}}</b></small>
+                </div>
+                <div class="text" style="padding: 2px;">
+                  <small>Fee<br/><b>BTC {{data.fees}}</b></small>
+                </div>
+                <div class="text" style="padding: 2px;">
+                  <small>Transaction Hash ID<br/><b>{{data.hash}}</b></small>
+                </div>
+        </ion-col>
+      </ion-row>
+  </div>
+
+</ion-content>

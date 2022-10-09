@@ -1,0 +1,108 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Send to Bank Account</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile">
+        <ion-thumbnail>
+          <ion-icon name="rocket-sharp"></ion-icon>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+
+    <div class="item" *ngIf="!senttoBank">
+      <form [formGroup]="sendtoBank">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Select Bank</ion-label>
+            <ion-select formControlName="bname" interface="popover" [value]="selectbank" (ionChange)="selectBank($event)" required>
+                <div *ngFor="let data of banks">
+                <ion-select-option [value]="data.value">{{data.name}}</ion-select-option>
+                </div>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Account Number</ion-label>
+              <ion-input formControlName="accnum" type="text" required></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Account Name</ion-label>
+              <ion-input formControlName="accname" type="text"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Amount</ion-label>
+              <ion-input formControlName="amount" type="text" required></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button type="submit" class="content_button" expand="block">
+        Send
+      </ion-button>
+      </form>
+  </div>
+
+
+
+    <ion-grid style="height: 90%" [ngClass]="backdrop" *ngIf="senttoBank">
+      <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%">
+        <div class="holder">
+          <div class="sucess-msg">
+            <div class="animation-holder  flex al-center jc-center">
+              <img class="animate__animated animate__bounceInDown animate__slower" id="wallet" src="assets/imgs/walletonly.png" alt="">
+              <img  class="downanimation1" id="firstcoin" src="assets/imgs/bestcoin.png" alt="">
+              <img  class="downanimation2" id="seccoin" src="assets/imgs/bestcoin.png" alt="">
+              <img  class="downanimation3" id="thirdcoin" src="assets/imgs/bestcoin.png" alt="">
+            </div>
+
+            <div class="success-holder ion-text-center">
+              <h1 class="animate__animated animate__zoomIn animate__delay-2s ">Done</h1>
+              <p class="animate__animated animate__zoomIn animate__delay-3s">Your Funds has been successfully sent</p>
+              <div class="btn-holder animate__animated  animate__zoomIn animate__delay-5s ion-text-center">
+                <ion-button shape="round" (click)="goBack()">
+                  Go Back
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid>
+
+                        </div>
+                          </ion-row>
+                          </ion-grid>
+</ion-content>

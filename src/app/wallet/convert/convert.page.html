@@ -1,0 +1,113 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Swap Crypto</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile">
+        <ion-thumbnail>
+          <ion-icon name="repeat-sharp"></ion-icon>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+
+  <ion-grid [ngClass]="backdrop" *ngIf="converted" fixed>
+    <ion-row class="ion-justify-content-center">
+      <div class="holder">
+        <div class="sucess-msg">
+
+          <div class="success-holder ion-text-center">
+              <img class="animate__animated animate__bounceInDown animate__slower" id="wallet" src="assets/imgs/walletonly.png" alt="">
+
+            <h1 class="animate__animated animate__zoomIn animate__delay-2s ">Converted Successful</h1>
+            <p class="animate__animated animate__zoomIn animate__delay-3s">Your wallet balance will be updated</p>
+            <div class="btn-holder animate__animated  animate__zoomIn animate__delay-5s ion-text-center">
+              <ion-button shape="round" (click)="goBack()">
+                Okay
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+  <div class="section2" *ngIf="!converted">
+
+    <div class="convert-selector">
+      <div class="from">
+        <div *ngFor="let data of currencies">
+          <ng-container *ngIf="data.value == fromCurrency">
+            <ion-item lines="none">
+              <div class="thumb flex al-center jc-center" (click)="presentModal()" slot="start">
+                <img [src]="data.icon" alt="" >
+              </div>
+              <div class="selected fromcurrency flex al-center" (click)="presentModal()">
+                <h3>{{data.name}}</h3>
+                <ion-icon name="caret-down"></ion-icon>
+              </div>
+              <ion-input class="ion-text-center" placeholder="0.000"></ion-input>
+            </ion-item>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="to">
+        <div *ngFor="let data of currencies">
+          <ng-container *ngIf="data.value == toCurrency">
+            <ion-item lines="none" (click)="presentModal()">
+              <div class="thumb flex al-center jc-center" slot="start">
+                <img [src]="data.icon" alt="" >
+              </div>
+              <div class="selected fromcurrency flex al-center">
+                <h3>{{data.name}}</h3>
+                <ion-icon name="caret-down"></ion-icon>
+              </div>
+              <ion-input class="ion-text-center" placeholder="0.000"></ion-input>
+            </ion-item>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="convert-btn btn-holder ion-text-center">
+        <ion-button shape="round" (click)="convert()">
+          Convert
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+
+            </div>
+              </ion-row>
+              </ion-grid>
+</ion-content>

@@ -1,0 +1,106 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Send to User</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile">
+        <ion-thumbnail>
+          <ion-icon name="rocket-sharp"></ion-icon>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+
+    <div class="item">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Username</ion-label>
+            <ion-input type="hidden" formControlName="fromUsername"></ion-input>
+              <ion-input type="text" formControlName="toUsername" [ngClass]="{ 'is-invalid': submitted && f.toUsername.errors }"></ion-input>
+              <div *ngIf="submitted && f.toUsername.errors" class="invalid-feedback">
+                <div *ngIf="f.toUsername.errors.required">Username is required</div>
+              </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Amount</ion-label>
+              <ion-input type="text" formControlName="amount" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"></ion-input>
+              <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                <div *ngIf="f.amount.errors.required">Amount is required</div>
+              </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Summary (Optional)</ion-label>
+              <ion-input type="text" formControlName="summary"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      <ion-button expand="block" type="submit" [disabled]="loading" class="btn-block">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Proceed
+      </ion-button>
+      </form>
+  </div>
+
+
+
+   <!-- <ion-grid style="height: 50%" [ngClass]="backdrop" *ngIf="senttoUser">
+      <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 30%">
+        <div class="holder">
+          <div class="sucess-msg">
+            <div class="animation-holder  flex al-center jc-center">
+              <img class="animate__animated animate__bounceInDown animate__slower" id="wallet" src="assets/imgs/walletonly.png" alt="">
+              <img  class="downanimation1" id="firstcoin" src="assets/imgs/bestcoin.png" alt="">
+              <img  class="downanimation2" id="seccoin" src="assets/imgs/bestcoin.png" alt="">
+              <img  class="downanimation3" id="thirdcoin" src="assets/imgs/bestcoin.png" alt="">
+            </div>
+
+            <div class="success-holder ion-text-center">
+              <h1 class="animate__animated animate__zoomIn animate__delay-2s ">Done</h1>
+              <p class="animate__animated animate__zoomIn animate__delay-3s">Your Funds has been successfully sent</p>
+              <div class="btn-holder animate__animated  animate__zoomIn animate__delay-5s ion-text-center">
+                <ion-button shape="round" (click)="goBack()">
+                  Go Back
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid> -->
+
+                            </div>
+                              </ion-row>
+                              </ion-grid>
+</ion-content>

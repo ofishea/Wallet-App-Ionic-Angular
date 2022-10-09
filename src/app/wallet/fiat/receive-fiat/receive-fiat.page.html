@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Receive Fiat</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="backgroundColor: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile">
+        <ion-thumbnail>
+          <ion-icon name="qr-code-sharp"></ion-icon>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+<div class="receive">
+    <h6 class="ion-text-center"><b>Username</b></h6>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label>
+            <h1><b>@Ofishea</b></h1>
+          </ion-label>
+          <div class="thumb flex al-center jc-center" slot="end">
+            <ion-buttons slot="end">
+              <ion-button (click)="presentAlert()" (click)="copyString()">
+                <ion-icon name="copy-sharp"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </div>
+        </ion-item>
+        <ion-item>
+          <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=Ofishea" />
+        </ion-item>
+      </ion-col>
+  </div>
+    <div>
+    </div>
+
+                              </div>
+                                </ion-row>
+                                </ion-grid>
+</ion-content>
