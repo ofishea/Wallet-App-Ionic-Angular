@@ -1,0 +1,8 @@
+{
+  "name": "plitomean",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
