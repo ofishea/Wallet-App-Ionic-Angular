@@ -1,28 +1,20 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// used to create fake backend
-import { fakeBackendProvider } from './_helpers';
-
-import { IonicModule, IonicRouteStrategy, NavParams } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { JwtInterceptor, ErrorInterceptor, appInitializer } from './_helpers';
-import { AccountService } from './_services';
-import { AlertComponent } from './_components';
 import { ConvertmodalPageModule } from './wallet/convert/convertmodal/convertmodal.module';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AlertComponent],
+    AppComponent],
   entryComponents: [],
   imports: [
     CommonModule,
@@ -31,17 +23,9 @@ import { ConvertmodalPageModule } from './wallet/convert/convertmodal/convertmod
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ConvertmodalPageModule,
-    HttpClientModule // injected module
+    ConvertmodalPageModule
   ],
-  providers: [
-    { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-    // provider used to create fake backend
-    // fakeBackendProvider
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, NavParams],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 
