@@ -1,0 +1,259 @@
+<ion-header class="ion-no-border d-md-none" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Wallet</ion-title>
+     <ion-buttons slot="end">
+       <ion-button color="dark">
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile d-md-none">
+        <h5>Total Balance</h5>
+        <h1>NGN 111,523.5</h1>
+      </div>
+      <div class="profilee d-none d-md-block">
+        <h5>Total Balance</h5>
+        <h1>NGN 111,523.5</h1>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+  <div class="top-holder ion-text-center">
+      <div class="convv">
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="buy">
+        <ion-icon name="logo-bitcoin"></ion-icon>
+        <ion-label>Buy</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="convert">
+        <ion-icon name="repeat-sharp"></ion-icon>
+        <ion-label>Swap</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="sell">
+        <ion-icon name="cash-sharp"></ion-icon>
+        <ion-label>Sell</ion-label>
+      </ion-button>
+      </ion-buttons>
+      </div>
+
+      <div class="conv d-md-none">
+      <ion-buttons slot="start">
+      <ion-button routerLink="buy">
+        <ion-icon name="logo-bitcoin"></ion-icon>
+        <ion-label>Buy</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+      <ion-button routerLink="convert">
+        <ion-icon name="repeat-sharp"></ion-icon>
+        <ion-label>Swap</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+      <ion-button routerLink="sell">
+        <ion-icon name="cash-sharp"></ion-icon>
+        <ion-label>Sell</ion-label>
+      </ion-button>
+      </ion-buttons>
+      </div>
+  </div>
+
+
+  <!-- <div class="seg-holder ion-padding-horizontal d-md-none">
+    <ion-segment [value]="category" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="portfolio">
+      <ion-label>Portfolio</ion-label>
+    </ion-segment-button>
+      <ion-segment-button value="history">
+        <ion-label>P2P History</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div> -->
+
+  <div class="portfolio">
+    <div class="text"><h2>Local Currency</h2></div>
+
+    <ion-item lines="none" routerLink="fiat">
+      <div class="thumb flex al-center jc-center" id="btc" slot="start">
+        <img src="assets/flags/32/Nigeria.png" alt="">
+      </div>
+      <ion-label>
+        <h2>NGN</h2>
+        <h5>Nigerian Naira</h5>
+      </ion-label>
+
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h5>NGN {{account.fiatBalance}}</h5>
+      </div>
+    </ion-item>
+
+
+    <div class="text"><h2>Crypto Currency</h2></div>
+
+      <div>
+        <ion-searchbar placeholder="Search Crypto" [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+      </div>
+    <ion-item lines="none" routerLink="crypto-details">
+      <div class="thumb flex al-center jc-center" id="btc" slot="start">
+        <img src="assets/crypto-icons/btc.svg" alt="">
+      </div>
+      <ion-label>
+        <h2>BTC</h2>
+        <h5>Bitcoin</h5>
+      </ion-label>
+
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h2>0.0032</h2>
+        <h5>NGN 73,471.75</h5>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none" routerLink="crypto-details">
+      <div class="thumb flex al-center jc-center" id="maker" slot="start">
+        <img src="assets/crypto-icons/eth.svg" alt="">
+      </div>
+      <ion-label>
+        <h2>ETH</h2>
+        <h5>Ethereum</h5>
+      </ion-label>
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h2>0.016</h2>
+        <h5>NGN 34,471.75</h5>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none" routerLink="crypto-details">
+      <div class="thumb flex al-center jc-center" id="binance" slot="start">
+        <img src="assets/crypto-icons/xrp.svg" alt="">
+      </div>
+      <ion-label>
+        <h2>XRP</h2>
+        <h5>Ripple</h5>
+      </ion-label>
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h2>0.0</h2>
+        <h5>NGN 0.00</h5>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none" routerLink="crypto-details">
+      <div class="thumb flex al-center jc-center" id="matic" slot="start">
+        <img src="assets/crypto-icons/ltc.svg" alt="">
+      </div>
+      <ion-label>
+        <h2>LTC</h2>
+        <h5>Litecoin</h5>
+      </ion-label>
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h2>0.0</h2>
+        <h5>NGN 0.00</h5>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none" routerLink="crypto-details">
+      <div class="thumb flex al-center jc-center" id="xdai" slot="start">
+        <img src="assets/crypto-icons/usdt.svg" alt="">
+      </div>
+      <ion-label>
+        <h2>USDT</h2>
+        <h5>USD Tether</h5>
+      </ion-label>
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h2>1.00</h2>
+        <h5>NGN 580.00</h5>
+      </div>
+    </ion-item>
+  </div>
+
+
+  <!-- <div class="portfolio" *ngIf="category=='history'">
+    <ion-item lines="none">
+      <div class="thumb flex al-center jc-center" id="btc" slot="start">
+        <img src="assets/crypto-icons/btc.svg" alt="">
+      </div>
+      <ion-label>
+        <h5>1MhMVgzVR89cHFHnZgCmyoqjkELB </h5>
+        <h5>BTC -0.00382</h5>
+      </ion-label>
+
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h5 style="color: red;">28/04/22</h5>
+        <h5>NGN 33,471.75</h5>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div class="thumb flex al-center jc-center" id="maker" slot="start">
+        <img src="assets/crypto-icons/eth.svg" alt="">
+      </div>
+      <ion-label>
+        <h5>1MhMVgzVR89cHFHnZgCmyoqjkELB</h5>
+        <h5>ETH -0.022 </h5>
+      </ion-label>
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h5 style="color: red;">30/04/22</h5>
+        <h5>NGN 22,771.45</h5>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div class="thumb flex al-center jc-center" id="maker" slot="start">
+        <img src="assets/crypto-icons/eth.svg" alt="">
+      </div>
+      <ion-label>
+        <h5>1MhMVgzVR89cHFHnZgCmyoqjkELB</h5>
+        <h5>ETH -0.0112 </h5>
+      </ion-label>
+      <div class="end-slot2 ion-text-right" slot="end">
+        <h5 style="color: red;">30/04/22</h5>
+        <h5>NGN 64,341.45</h5>
+      </div>
+    </ion-item>
+  </div> -->
+
+
+  <!-- <div class="history animate__animated animate__slideInUp animate__fast" *ngIf="category=='history'">
+    <div class="ion-padding">
+  Transaction History
+        <div>
+          <ion-item lines="none" *ngFor="let item of [1,2,3,4,5,6]">
+            <ion-thumbnail>
+              <img src="assets/crypto-icons/btc.svg" />
+            </ion-thumbnail>
+            <div class="text">
+              <h5>Sent to 1MhMVgzVR89cHFHnZgCmyoqjkELB</h5>
+              <ion-label>-0.00382 BTC </ion-label>
+            </div>
+            <ion-buttons slot="end">
+              <ion-button (click)="onBTC
+              ()" color="danger">
+                Feb 11
+              </ion-button>
+            </ion-buttons>
+          </ion-item>
+        </div>
+
+    </div>
+  </div> -->
+
+
+
+</div>
+  </ion-row>
+  </ion-grid>
+
+</ion-content>
