@@ -182,29 +182,11 @@ ion-tab-bar
   {
       color: white !important;
   }
-
-  ion-modal.create-deal-class::part(content) {
-    --height: 40%;
-    position: absolute;
-    top: 60%;
-    --width: 100%;
-    border-radius: 25px;
-    display: block;
- }
  
  ion-modal.history-class::part(content) {
     --height: 70%;
     position: absolute;
     top: 30%;
-    --width: 100%;
-    border-radius: 25px;
-    display: block;
- }
- 
- ion-modal.p2p-class::part(content) {
-    --height: 80%;
-    position: absolute;
-    top: 20%;
     --width: 100%;
     border-radius: 25px;
     display: block;
