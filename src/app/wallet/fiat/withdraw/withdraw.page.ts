@@ -27,8 +27,5 @@ export class WithdrawPage implements OnInit {
   onSave() {
     this.modalController.dismiss();
   }
-  onDone() {
-    this.modalController.dismiss(['bitcoin']);
-  }
 
 }
