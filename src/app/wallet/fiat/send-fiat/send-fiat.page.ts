@@ -24,23 +24,11 @@ export class SendFiatPage implements OnInit {
   onSave() {
     this.modalController.dismiss();
   }
-  onSendToBank() {
-    this.router.navigate(['wallet/fiat/send-fiat/send-to-bank']);
-  }
   onSendToUser() {
     this.router.navigate(['wallet/fiat/send-fiat/send-to-user']);
   }
   onAirtime() {
     this.router.navigate(['wallet/fiat/send-fiat/airtime']);
-  }
-  onDataBundle() {
-    this.router.navigate(['wallet/fiat/send-fiat/data-bundle']);
-  }
-  onElectricity() {
-    this.router.navigate(['wallet/fiat/send-fiat/electricity']);
-  }
-  onTv() {
-    this.router.navigate(['wallet/fiat/send-fiat/tv-subscription']);
   }
 
 }
