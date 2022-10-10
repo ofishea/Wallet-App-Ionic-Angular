@@ -1,13 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from "@angular/router/testing";
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { FiatPage } from './fiat.page';
 import { IndexPage } from '../index/index.page';
 import { NotfoundPage } from '../notfound/notfound.page';
-import { ApiService } from 'src/app/services/api.service';
 import { routes } from '../app-routing.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -22,7 +20,6 @@ describe('FiatPage', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes(routes),
-        HttpClientModule,
         FormsModule
       ],
       declarations: [
@@ -30,9 +27,7 @@ describe('FiatPage', () => {
         IndexPage,
         NotfoundPage
       ],
-      providers: [
-        ApiService,
-      ],
+      providers: [ ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
 
