@@ -29,9 +29,6 @@ export class PreviewPage implements OnInit {
   onSave() {
     this.modalController.dismiss();
   }
-  onConfirm() {
-    this.modalController.dismiss(['bitcoin']);
-  }
 
   send()
   {
