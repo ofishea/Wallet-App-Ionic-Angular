@@ -2,9 +2,6 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController, NavController } from '@ionic/angular';
-import { first } from 'rxjs/operators';
-
-import { AccountService, WalletService, AlertService } from '@app/_services';
 
 @Component({
   selector: 'app-airtime',
@@ -14,25 +11,21 @@ import { AccountService, WalletService, AlertService } from '@app/_services';
 export class AirtimePage implements OnInit {
 
 selectnetwork:any = 'mtn'
-account = this.accountService.accountValue;
-wallet = this.walletService.walletValue;
 networks:any;
 form: FormGroup;
-loading = false;
-submitted = false;
+showAnimation:any = 'rotateanimation'
+sent:boolean = false;
+backdrop:any = ''
 
   constructor(
     private router: Router,
     private zone: NgZone,
-    private accountService: AccountService,
-    private walletService: WalletService,
-    private alertService: AlertService,
     private route: ActivatedRoute,
     public formBuilder: FormBuilder,
     private NavCtrl: NavController,
     private modalController: ModalController
   ) { 
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.showAnimation = 'rotateanimation';
   }
 
   ngOnInit() {
@@ -72,46 +65,43 @@ submitted = false;
 
 
     this.form = this.formBuilder.group({
-      fromUsername: [this.account.userName],
       operatorId: ['', Validators.required],
       phone: ['', Validators.required],
       amount: ['', Validators.required]
   });
   }
 
- // convenience getter for easy access to form fields
- get f() { return this.form.controls; }
-
- onSubmit() {
-     this.submitted = true;
-
-       // reset alerts on submit
-       this.alertService.clear();
-
-     // stop here if form is invalid
-     if (this.form.invalid) {
-         return;
-     } 
-
-     this.loading = true;
-     this.walletService.airtime(this.form.value)
-         .pipe(first())
-         .subscribe({
-             next: () => {
-              this.alertService.success('Airtime has been sent successfully', { keepAfterRouteChange: true });
-              this.router.navigate(['../../'], { relativeTo: this.route });
-             },
-             error: error => {
-                 this.alertService.error(error);
-                 this.loading = false;
-             }
-         });
- }
-
   selectNetwork(ev)
   {
     this.selectnetwork = ev.detail.value;
     console.log(this.selectnetwork);
+  }
+
+  send()
+  {
+
+    this.showAnimation = 'rotateanimationinfinite'
+
+    setTimeout(() => {
+      this.showAnimation = 'rotateanimation'
+      this.showSuccess();
+    }, 3000);
+
+  }
+
+  showSuccess()
+  {
+    this.sent = true;
+  }
+
+  goBack()
+  {
+      this.backdrop = 'animate__animated animate__slow animate__fadeOutUpBig';
+      setTimeout(() => {
+          this.backdrop = '';
+          this.sent = false;
+          this.showAnimation = ''
+      }, 500);
   }
 
   onBack() {
