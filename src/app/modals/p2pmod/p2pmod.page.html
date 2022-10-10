@@ -1,0 +1,63 @@
+<ion-content class="ion-padding">
+  <ion-grid style="height: 100%">
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <div class="holder" *ngFor="let item of p2pTrade">
+
+        <ion-col size="12" *ngIf="item.uid == this.uid" class="second_col">
+          <div class="item2">
+            <ion-grid>
+              <ion-row>
+              <ion-col size="12">
+                <ion-label>Amount</ion-label>
+              </ion-col>
+                <ion-col size="6">
+                  <ion-label>BTC</ion-label>
+                    <ion-input type="text" placeholder="0.0"></ion-input>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-label>NGN</ion-label>
+                    <ion-input type="text" placeholder="0.0"></ion-input>
+                </ion-col>
+                    <h6>Range - NGN {{item.minimum}} - {{item.maximum}}</h6>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-label>Payment Method</ion-label>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-select placeholder="Select" interface="popover">
+                      <ion-select-option [value]="item.paymentMethod">{{item.paymentMethod}}</ion-select-option>
+                  </ion-select>
+                <!--  <h6>If unaware, leave default</h6> -->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col align="center" size="12">
+                  <h5 style="color: green;">Rate: <b>NGN 21,467,322.00</b></h5>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </div>
+          <div class="item">
+            <ion-row>
+              <ion-col size="11">
+                <h5> {{item.userName}} <ion-icon color="success" name="checkmark-circle-sharp"></ion-icon> </h5>
+              </ion-col>
+            </ion-row>
+          </div>
+            <div class="item">
+              <ion-row>
+                <ion-col size="12">
+                  <h2 style="font-weight: bold;">Terms</h2>
+                    <h6>{{item.terms}}</h6>
+                </ion-col>
+              </ion-row>
+            </div>
+          <ion-button class="content_button" expand="block">
+            Proceed
+          </ion-button>
+        </ion-col>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

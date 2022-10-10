@@ -1,0 +1,29 @@
+<ion-content class="ion-padding">
+  <ion-grid style="height: 100%">
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <div class="holder">
+
+        <div *ngFor="let item of wallet">
+        <div *ngIf="item.uid == this.uid" class="details">
+          <div class="ion-text-center">
+            Transaction History
+          </div>
+          <h5>{{item.purpose}}</h5>
+          <p class="ion-text-wrap">Amount: <span>NGN {{item.amount}}</span></p>
+          <p class="ion-text-wrap">Balance: <span>NGN {{item.balanceAfter}}</span></p>
+          <p class="ion-text-wrap">Reference: <span>{{item.reference}}</span></p>
+          <p class="ion-text-wrap">Summary: <span>{{item.summary}}</span></p>
+          <p class="ion-text-wrap">Sent <span>{{item.trnxSummary}}</span></p>
+          <p class="ion-text-wrap">Date: <span>{{item.createdAt | slice:0:10}}</span></p>
+         <!-- <div class="ion-text-center">
+            <ion-button (click)="dismiss()">
+              Okay, Got it
+            </ion-button> 
+        </div> --> 
+      </div>
+
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
