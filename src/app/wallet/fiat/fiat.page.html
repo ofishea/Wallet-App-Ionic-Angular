@@ -17,7 +17,7 @@
   <div class="profile_content ion-padding">
       <div class="profile d-md-none">
         <h5>Balance</h5>
-        <h1>NGN {{account.fiatBalance}}</h1>
+        <h1>NGN 10,000</h1>
       </div>
       <div class="profilee d-none d-md-block">
         <h5>Balance</h5>
@@ -103,38 +103,20 @@
 
   <div class="portfolio">
   <ion-label><h2>Recent Transactions</h2></ion-label>
-<div *ngFor="let item of wallet; let i = index;">
-  <div *ngIf="account.userName == item.userName">
-  <ion-item lines="none" (click)="historyModal(item.uid)">
+  <ion-item lines="none" (click)="historyModal()">
     <div class="thumb flex al-center">
       <ion-icon name="wallet-sharp"></ion-icon>
     </div>
     <ion-label>
-      <h5>{{item.purpose}} </h5>
-      <h5>{{item.trnxSummary}} </h5>
+      <h5>Transfer </h5>
+      <h5>To: Stephen </h5>
     </ion-label>
 
     <div class="end-slot2 ion-text-right" slot="end">
-      <h5>{{item.createdAt | slice:0:10}}</h5>
-      <h5>NGN {{item.amount}}</h5>
+      <h5>May 12, 2022</h5>
+      <h5>NGN 1,500</h5>
     </div>
   </ion-item>
-</div>
-
-<!-- <div *ngIf="account.userName != item.userName">
-<ion-item lines="none">
-  <div class="thumb flex al-center" slot="start">
-    <ion-icon name="code-download-sharp"></ion-icon>
-  </div>
-  <ion-label>
-    <h5>No transaction</h5>
-    <h5>history yet </h5>
-  </ion-label>
-  <div class="end-slot2 ion-text-right" slot="end">
-  </div>
-</ion-item> 
-</div> -->
-</div>
 
   </div>
 
