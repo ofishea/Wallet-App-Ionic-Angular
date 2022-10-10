@@ -36,7 +36,7 @@
     </ion-buttons>
 
 
-    <div class="item">
+    <div class="item" *ngIf="!senttoUser">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <ion-grid>
         <ion-row>
@@ -75,7 +75,7 @@
 
 
 
-   <!-- <ion-grid style="height: 50%" [ngClass]="backdrop" *ngIf="senttoUser">
+    <ion-grid style="height: 50%" [ngClass]="backdrop" *ngIf="senttoUser">
       <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 30%">
         <div class="holder">
           <div class="sucess-msg">
@@ -98,7 +98,7 @@
           </div>
         </div>
       </ion-row>
-    </ion-grid> -->
+    </ion-grid>
 
                             </div>
                               </ion-row>
