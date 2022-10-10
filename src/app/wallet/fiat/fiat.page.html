@@ -1,0 +1,145 @@
+<ion-header class="ion-no-border d-md-none">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Local Currency</ion-title>
+     <ion-buttons slot="end">
+       <ion-button>
+         <ion-icon name="notifications"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #EAB355;">
+  <div class="profile_content ion-padding">
+      <div class="profile d-md-none">
+        <h5>Balance</h5>
+        <h1>NGN {{account.fiatBalance}}</h1>
+      </div>
+      <div class="profilee d-none d-md-block">
+        <h5>Balance</h5>
+        <h1>NGN 3,000.00</h1>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-6 col-md-10">
+
+    <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button (click)="onBack()" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+
+ 
+
+  <div class="top-holder ion-text-center">
+
+
+      <div class="convv">
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="deposit">
+        <ion-icon name="wallet-sharp"></ion-icon>
+        <ion-label>Deposit</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="withdraw">
+        <ion-icon name="code-download-sharp"></ion-icon>
+        <ion-label>Withdraw</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="send-fiat">
+        <ion-icon name="rocket-sharp"></ion-icon>
+        <ion-label>Send/Pay</ion-label>
+      </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start" class="d-none d-md-block">
+      <ion-button routerLink="receive-fiat">
+        <ion-icon name="qr-code-sharp"></ion-icon>
+        <ion-label>Receive</ion-label>
+      </ion-button>
+      </ion-buttons>
+      </div>
+
+      <div class="conv d-md-none">
+      <ion-buttons slot="start">
+        <ion-button routerLink="deposit">
+          <ion-icon name="wallet-sharp"></ion-icon>
+          <ion-label>Deposit</ion-label>
+        </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="start">
+        <ion-button routerLink="withdraw">
+          <ion-icon name="code-download-sharp"></ion-icon>
+          <ion-label>Withdraw</ion-label>
+        </ion-button>
+        </ion-buttons>
+        </div>
+        
+        <div class="conv d-md-none">
+        <ion-buttons slot="start">
+        <ion-button routerLink="send-fiat">
+          <ion-icon name="rocket-sharp"></ion-icon>
+          <ion-label>Send/Pay</ion-label>
+        </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="start">
+        <ion-button routerLink="receive-fiat">
+          <ion-icon name="qr-code-sharp"></ion-icon>
+          <ion-label>Receive</ion-label>
+        </ion-button>
+        </ion-buttons>
+        </div>
+  </div>
+
+  <div class="portfolio">
+  <ion-label><h2>Recent Transactions</h2></ion-label>
+<div *ngFor="let item of wallet; let i = index;">
+  <div *ngIf="account.userName == item.userName">
+  <ion-item lines="none" (click)="historyModal(item.uid)">
+    <div class="thumb flex al-center">
+      <ion-icon name="wallet-sharp"></ion-icon>
+    </div>
+    <ion-label>
+      <h5>{{item.purpose}} </h5>
+      <h5>{{item.trnxSummary}} </h5>
+    </ion-label>
+
+    <div class="end-slot2 ion-text-right" slot="end">
+      <h5>{{item.createdAt | slice:0:10}}</h5>
+      <h5>NGN {{item.amount}}</h5>
+    </div>
+  </ion-item>
+</div>
+
+<!-- <div *ngIf="account.userName != item.userName">
+<ion-item lines="none">
+  <div class="thumb flex al-center" slot="start">
+    <ion-icon name="code-download-sharp"></ion-icon>
+  </div>
+  <ion-label>
+    <h5>No transaction</h5>
+    <h5>history yet </h5>
+  </ion-label>
+  <div class="end-slot2 ion-text-right" slot="end">
+  </div>
+</ion-item> 
+</div> -->
+</div>
+
+  </div>
+
+
+      </div>
+        </ion-row>
+        </ion-grid>
+</ion-content>
