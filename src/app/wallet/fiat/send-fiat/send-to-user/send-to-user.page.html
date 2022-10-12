@@ -66,8 +66,7 @@
         </ion-row>
       </ion-grid>
       
-      <ion-button expand="block" type="submit" [disabled]="loading" class="btn-block">
-        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      <ion-button (click)="send()" class="btn-block">
         Proceed
       </ion-button>
       </form>
