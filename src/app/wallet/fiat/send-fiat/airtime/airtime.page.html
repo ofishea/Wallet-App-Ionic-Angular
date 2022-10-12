@@ -36,7 +36,29 @@
     </ion-buttons>
 
 
-    <div class="item">
+    <ion-grid style="height: 90%" [ngClass]="backdrop" *ngIf="sent" fixed>
+      <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%">
+        <div class="holder">
+          <div class="sucess-msg">
+            <div class="animation-holder  flex al-center jc-center">
+              <img class="animate__animated animate__bounceInDown animate__slower" id="wallet" src="assets/imgs/walletonly.png" alt="">
+            </div>
+
+            <div class="success-holder ion-text-center">
+              <h1 class="animate__animated animate__zoomIn animate__delay-2s ">Sent Successfully</h1>
+              <p class="animate__animated animate__zoomIn animate__delay-3s">Your Airtime has been sent and balance will be updated</p>
+              <div class="btn-holder animate__animated  animate__zoomIn animate__delay-5s ion-text-center">
+                <ion-button shape="round" (click)="goBack()">
+                  Okay
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid>
+  
+    <div class="item" *ngIf="!sent">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <ion-grid>
       <ion-row>
