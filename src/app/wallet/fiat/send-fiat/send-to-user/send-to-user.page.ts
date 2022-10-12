@@ -12,7 +12,7 @@ export class SendToUserPage implements OnInit {
 
 form: FormGroup;
 showAnimation:any = 'rotateanimation'
-sent:boolean = false;
+senttoUser:boolean = false;
 backdrop:any = ''
 
   constructor(
@@ -55,7 +55,7 @@ backdrop:any = ''
 
   showSuccess()
   {
-    this.sent = true;
+    this.senttoUser = true;
   }
 
   goBack()
@@ -63,7 +63,7 @@ backdrop:any = ''
       this.backdrop = 'animate__animated animate__slow animate__fadeOutUpBig';
       setTimeout(() => {
           this.backdrop = '';
-          this.sent = false;
+          this.senttoUser = false;
           this.showAnimation = ''
       }, 500);
   }
