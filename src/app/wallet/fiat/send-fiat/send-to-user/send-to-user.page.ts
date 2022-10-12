@@ -11,8 +11,9 @@ import { ModalController, NavController } from '@ionic/angular';
 export class SendToUserPage implements OnInit {
 
 form: FormGroup;
-loading = false;
-submitted = false;
+showAnimation:any = 'rotateanimation'
+sent:boolean = false;
+backdrop:any = ''
 
   constructor(
     private router: Router,
@@ -28,8 +29,9 @@ submitted = false;
   }
 
   ngOnInit() {
+        this.showAnimation = 'rotateanimation';
+    
     this.form = this.formBuilder.group({
-        fromUsername: [this.account.userName],
         toUsername: ['', Validators.required],
         amount: ['', Validators.required],
         summary: ['']
@@ -37,6 +39,34 @@ submitted = false;
 }
 
  }
+
+
+  send()
+  {
+
+    this.showAnimation = 'rotateanimationinfinite'
+
+    setTimeout(() => {
+      this.showAnimation = 'rotateanimation'
+      this.showSuccess();
+    }, 3000);
+
+  }
+
+  showSuccess()
+  {
+    this.sent = true;
+  }
+
+  goBack()
+  {
+      this.backdrop = 'animate__animated animate__slow animate__fadeOutUpBig';
+      setTimeout(() => {
+          this.backdrop = '';
+          this.sent = false;
+          this.showAnimation = ''
+      }, 500);
+  }
 
   onBack() {
     this.NavCtrl.back();
