@@ -14,11 +14,8 @@ export class HistoryPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private accountService: AccountService,
-    private walletService: WalletService,
     private router: Router,
     private modalController: ModalController,
-    private navParams: NavParams,
     private navCtrl: NavController
   ) { }
  
