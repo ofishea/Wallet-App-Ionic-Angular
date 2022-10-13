@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ModalController, NavController, NavParams } from '@ionic/angular';
-import { AccountService, WalletService } from '../../_services';
-import { Account, Wallet } from '@app/_models';
 import { first } from 'rxjs/operators';
 
 @Component({
