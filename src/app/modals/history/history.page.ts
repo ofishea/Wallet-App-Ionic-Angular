@@ -12,9 +12,6 @@ import { first } from 'rxjs/operators';
 })
 export class HistoryPage implements OnInit {
 
-  uid: string;
-  account: Account;
-  wallet: Wallet[];
   bitcoinhandler:any = 'animate__animated animate__bounceInDown animate__slow';
 
   constructor(
@@ -28,13 +25,7 @@ export class HistoryPage implements OnInit {
   ) { }
  
   ngOnInit() {
-    this.uid = this.navParams.get('uid');
     this.setanimation();
-
-    this.accountService.account.subscribe(x => this.account = x);
-    this.walletService.getById(this.uid)
-    .pipe(first())
-    .subscribe(uid => this.wallet = uid);
   }
 
 
