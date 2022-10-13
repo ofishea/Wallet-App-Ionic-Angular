@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ModalController, NavController, NavParams } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { first } from 'rxjs/operators';
 
 @Component({
