@@ -83,6 +83,7 @@
 ion-button
 {
     text-transform: none;
+    --background: #88038d;
 }
 
 
@@ -94,7 +95,7 @@ ion-tab-bar
 {
     ion-button
     {
-        --background: var(--ion-color-primary);
+        --background: #88038d;
         --border-radius: 15px;
         --color:white;
         font-family: 'CSMedium';
@@ -162,7 +163,7 @@ ion-tab-bar
 
   ion-toolbar
 {
-    --background: #06038D;
+    --background: #88038d;
     --padding-top: 30px;
     ion-icon
     {
