@@ -24,11 +24,5 @@ export class DepositPage implements OnInit {
   onConfirm() {
     this.router.navigate(['wallet/fiat/deposit/preview']);
   }
-  onSave() {
-    this.modalController.dismiss();
-  }
-  onDone() {
-    this.modalController.dismiss(['bitcoin']);
-  }
 
 }
