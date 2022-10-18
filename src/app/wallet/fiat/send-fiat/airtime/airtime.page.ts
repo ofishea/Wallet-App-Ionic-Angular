@@ -107,8 +107,5 @@ backdrop:any = ''
   onBack() {
     this.NavCtrl.back();
   }
-  onDone() {
-    this.modalController.dismiss(['bank-accounts']);
-  }
 
 }

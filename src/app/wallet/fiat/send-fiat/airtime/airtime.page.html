@@ -13,9 +13,9 @@
      </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<div style="background: #EAB355;">
-  <div class="profile_content ion-padding">
-      <div class="profile">
+<div style="background: #b4b2ad;">
+  <div class="balance_content ion-padding">
+      <div class="balance">
         <ion-thumbnail>
           <ion-icon name="rocket-sharp"></ion-icon>
         </ion-thumbnail>
@@ -40,10 +40,6 @@
       <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%">
         <div class="holder">
           <div class="sucess-msg">
-            <div class="animation-holder  flex al-center jc-center">
-              <img class="animate__animated animate__bounceInDown animate__slower" id="wallet" src="assets/imgs/walletonly.png" alt="">
-            </div>
-
             <div class="success-holder ion-text-center">
               <h1 class="animate__animated animate__zoomIn animate__delay-2s ">Sent Successfully</h1>
               <p class="animate__animated animate__zoomIn animate__delay-3s">Your Airtime has been sent and balance will be updated</p>
@@ -59,38 +55,28 @@
     </ion-grid>
   
     <div class="item" *ngIf="!sent">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <form >
       <ion-grid>
       <ion-row>
         <ion-col size="12">
           <ion-label>Phone Number</ion-label>
-          <ion-input type="hidden" formControlName="fromUsername"></ion-input>
-            <ion-input type="text" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"></ion-input>
-            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-              <div *ngIf="f.phone.errors.required">Phone number is required</div>
-            </div>
+            <ion-input type="text"></ion-input>
         </ion-col>
       </ion-row>
         <ion-row>
           <ion-col size="12">
             <ion-label>Select Network</ion-label>
-            <ion-select formControlName="operatorId" interface="popover" [value]="selectnetwork" (ionChange)="selectNetwork($event)" [ngClass]="{ 'is-invalid': submitted && f.operatorId.errors }">
+            <ion-select interface="popover" [value]="selectnetwork" (ionChange)="selectNetwork($event)">
                 <div *ngFor="let data of networks">
                 <ion-select-option [value]="data.value">{{data.name}}</ion-select-option>
                 </div>
             </ion-select>
-            <div *ngIf="submitted && f.operatorId.errors" class="invalid-feedback">
-              <div *ngIf="f.operatorId.errors.required">Network operator is required</div>
-            </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="12">
             <ion-label>Amount</ion-label>
-            <ion-input type="text" formControlName="amount" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"></ion-input>
-            <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
-              <div *ngIf="f.amount.errors.required">Amount is required</div>
-            </div>
+            <ion-input type="text"></ion-input>
           </ion-col>
         </ion-row>
       </ion-grid>
