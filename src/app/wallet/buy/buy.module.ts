@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { BuyPageRoutingModule } from './buy-routing.module';
 
 import { BuyPage } from './buy.page';
+import { BuyPreviewPage } from './buy-preview/buy-preview.page';
 
 @NgModule({
   imports: [
@@ -17,6 +18,9 @@ import { BuyPage } from './buy.page';
     BuyPageRoutingModule,
     Ng2SearchPipeModule
   ],
-  declarations: [BuyPage]
+  declarations: [
+    BuyPage,
+    BuyPreviewPage
+  ]
 })
 export class BuyPageModule {}

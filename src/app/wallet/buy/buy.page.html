@@ -13,13 +13,13 @@
      </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<div style="background: #EAB355;">
-  <div class="profile_content ion-padding">
-      <div class="profile d-md-none">
+<div style="background: #b4b2ad;">
+  <div class="balance_content ion-padding">
+      <div class="balance d-md-none">
         <h5>Fiat Balance</h5>
         <h1>NGN 3,000.00</h1>
       </div>
-      <div class="profilee d-none d-md-block">
+      <div class="balance-d d-none d-md-block">
         <h5>Fiat Balance</h5>
         <h1>NGN 3,000.00</h1>
       </div>
@@ -71,7 +71,7 @@
               <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
             </div>
 
-            <ion-list mode="md">
+            <ion-list mode="ios">
               <ion-radio-group name="auto" [value]="selectCrypto" (ionChange)="setCrypto($event)">
                 <div  *ngFor="let data of cryptos | filter:filterTerm">
                   <ng-container *ngIf="data.value != selectCrypto">
