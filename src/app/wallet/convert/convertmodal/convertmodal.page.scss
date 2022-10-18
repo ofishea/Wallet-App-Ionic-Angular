@@ -1,6 +1,6 @@
 ion-toolbar
 {
-    --background: #EAB355;
+    --background: #88038d;
     ion-title
     {
         --color: #EDEEFA;
@@ -17,15 +17,16 @@ ion-toolbar
 
 ion-content
 {
-    --background: #EAB355;
+    --background: #b4b2ad;
     .seg-holder
     {
+        padding: 20px;
         ion-segment
         {
            ion-segment-button
            {
-            --color: #53578A;
-            --color-checked:var(--ion-color-light);
+            --color: #ffffff;
+            --color-checked: #ffffff;
                font-family: 'CSMedium';
                 text-transform: none;
                 img
@@ -40,8 +41,10 @@ ion-content
 
     .section
     {
+        margin: 20px;
         .title
         {
+            margin-left: 20px;
             h3
             {
                 color: #9B9B9B;
