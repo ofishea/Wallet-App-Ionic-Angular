@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { SendFiatPageRoutingModule } from './send-fiat-routing.module';
 
 import { SendFiatPage } from './send-fiat.page';
+import { SendToUserPage } from './send-to-user/send-to-user.page';
+import { AirtimePage } from './airtime/airtime.page';
 
 @NgModule({
   imports: [
@@ -15,6 +17,10 @@ import { SendFiatPage } from './send-fiat.page';
     IonicModule,
     SendFiatPageRoutingModule
   ],
-  declarations: [SendFiatPage]
+  declarations: [
+    SendFiatPage,
+    SendToUserPage,
+    AirtimePage
+  ]
 })
 export class SendFiatPageModule {}

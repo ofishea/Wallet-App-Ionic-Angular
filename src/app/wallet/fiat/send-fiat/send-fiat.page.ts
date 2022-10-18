@@ -24,11 +24,5 @@ export class SendFiatPage implements OnInit {
   onSave() {
     this.modalController.dismiss();
   }
-  onSendToUser() {
-    this.router.navigate(['wallet/fiat/send-fiat/send-to-user']);
-  }
-  onAirtime() {
-    this.router.navigate(['wallet/fiat/send-fiat/airtime']);
-  }
 
 }

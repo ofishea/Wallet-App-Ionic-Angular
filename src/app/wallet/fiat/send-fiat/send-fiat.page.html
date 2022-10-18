@@ -13,9 +13,9 @@
      </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<div style="background: #EAB355;">
-  <div class="profile_content ion-padding">
-      <div class="profile">
+<div style="background: #b4b2ad;">
+  <div class="balance_content ion-padding">
+      <div class="balance">
         <ion-thumbnail>
           <ion-icon name="rocket-sharp"></ion-icon>
         </ion-thumbnail>
@@ -36,7 +36,7 @@
     </ion-buttons>
 <!-- <h1>Send Funds and Make Payment Easily</h1> -->
   <div class="the-list ">
-    <ion-item (click)="onSendToUser()" lines="none" detail>
+    <ion-item routerLink="send-to-user" lines="none" detail>
       <div class="thumb flex al-center jc-center" slot="start">
         <ion-buttons slot="start">
           <ion-button color="dark">
@@ -46,7 +46,7 @@
       </div>
       <ion-label>Send to User</ion-label>
     </ion-item>
-    <ion-item (click)="onAirtime()" lines="none" detail>
+    <ion-item routerLink="airtime" lines="none" detail>
       <div class="thumb flex al-center jc-center" slot="start">
         <ion-buttons slot="start">
           <ion-button color="dark">
