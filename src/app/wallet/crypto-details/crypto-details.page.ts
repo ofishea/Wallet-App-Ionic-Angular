@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { ModalController,NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { IonRouterOutlet } from '@ionic/angular';
 import { HistorymodalPage } from '../crypto-details/historymodal/historymodal.page';
 
@@ -21,8 +21,7 @@ showAnimation:any = 'rotateanimation'
     private navCtrl: NavController,
     private router: Router,
     public routerOutlet: IonRouterOutlet,
-    public modalController: ModalController,
-  private navParams: NavParams
+    public modalController: ModalController
   ) { }
 
   ngOnInit() {

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CryptoDetailsPageRoutingModule } from './crypto-details-routing.module';
 
 import { CryptoDetailsPage } from './crypto-details.page';
+import { HistorymodalPage } from './historymodal/historymodal.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { CryptoDetailsPage } from './crypto-details.page';
     IonicModule,
     CryptoDetailsPageRoutingModule
   ],
-  declarations: [CryptoDetailsPage]
+  declarations: [
+    CryptoDetailsPage,
+    HistorymodalPage
+  ]
 })
 export class CryptoDetailsPageModule {}
