@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController,NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ConvertmodalPage } from './convertmodal/convertmodal.page';
@@ -20,7 +20,6 @@ backdrop:any = ''
     private modalController: ModalController,
       private navCtrl: NavController,
       private router: Router,
-    private navParams: NavParams
    ) { }
 
   ngOnInit() {
