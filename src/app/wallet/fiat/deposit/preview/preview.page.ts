@@ -26,12 +26,6 @@ export class PreviewPage implements OnInit {
   onBack() {
     this.NavCtrl.back();
   }
-  onSave() {
-    this.modalController.dismiss();
-  }
-  onConfirm() {
-    this.modalController.dismiss(['bitcoin']);
-  }
 
   send()
   {
